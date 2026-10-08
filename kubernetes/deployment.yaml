@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: kubernetes-cicd-app
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: kubernetes-cicd-app
+
+  template:
+    metadata:
+      labels:
+        app: kubernetes-cicd-app
+
+    spec:
+      containers:
+        - name: kubernetes-cicd-app
+          image: 480111644340.dkr.ecr.us-east-2.amazonaws.com/kubernetes-cicd-app:v1
+          ports:
+            - containerPort: 5000
