@@ -6,14 +6,13 @@ on:
       - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Test application
+      - name: Build Docker image
         run: |
-          echo "Application code downloaded successfully"
-          echo "GitHub Actions is working!"
+          docker build -t kubernetes-cicd-app:v1 .
