@@ -39,7 +39,6 @@ module "eks" {
 
   name               = var.cluster_name
   kubernetes_version = var.kubernetes_version
-  create_kms_key = false
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.public_subnets
